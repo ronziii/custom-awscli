@@ -1,0 +1,20 @@
+#!/bin/bash
+
+CREDENTIAL_FILE=$1
+
+validate_file() {
+	echo "#####################"
+	echo "Checking if file exists!"
+	echo "#####################"
+
+	if [[ -f "$CREDENTIAL_FILE" ]]; then
+		echo "File exists! Initialize credential variables"
+		export_variable "$CREDENTIAL_FILE"
+	else 
+		echo "File path provided does not exist!"
+		exit 1
+	fi
+
+	return
+}
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+for f in ~/.ictlife-mvc/lib/*-functions; do source $f; done
+

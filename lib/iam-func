@@ -7,17 +7,17 @@
 # $ iam-users
 iam-users() {
 
-	if [[ "$@" -lt 2 ]]; then
-		show_usage
+#	if [[ "$@" -lt 2 ]]; then
+#		show_usage
 		exit 1
-	fi
+#	fi
 
-	if [[ $1 == "-c" ]]; then
+#	if [[ $1 == "-c" ]]; then
 		validate_file "$2"
-	else 
-		show_usage
-		exit 1
-	fi
+#	else 
+#		show_usage
+#		exit 1
+#	fi
 
 	aws iam list-users    \
     	--output text       \

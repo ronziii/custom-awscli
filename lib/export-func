@@ -1,12 +1,14 @@
 #!/bin/bash
 
-CREDENTIAL_FILE=$1
+CREDENTIAL_FILE="$1"
 
 
 export_variable() {
-	local access_key_id=$(egrep -w "AWS_ACCESS_KEY_ID" $CREDENTIAL_FILE | sed "s/.*=//g")
-	local access_secret_key=$(egrep -w "AWS_ACCESS_KEY_ID" $CREDENTIAL_FILE | sed "s/.*=//g")
-	local default_region=$(egrep -w "AWS_REGION" $CREDENTIAL_FILE | sed "s/.*=//g")
+	local access_key_id,access_secret_key,default_region
+
+	access_key_id=$(grep -w "AWS_ACCESS_KEY_ID" "$CREDENTIAL_FILE" | sed "s/.*=//g")
+	access_secret_key=$(grep -w "AWS_ACCESS_KEY_ID" "$CREDENTIAL_FILE" | sed "s/.*=//g")
+    default_region=$(grep -w "AWS_REGION" "$CREDENTIAL_FILE" | sed "s/.*=//g")
 
 	if  [[ ! -z  "$access_key_id" && ! -z "$access_secret_key" && ! -z "$default_region" ]]; then
 		export AWS_ACCESS_KEY_ID="$access_key_id"

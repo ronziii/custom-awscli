@@ -14,7 +14,7 @@ auth_file="$1"
 	fi
 
 
-	if [[ -r "$auth_file" ]]; then
+	if [[ -f "$auth_file" ]]; then
 		echo "File exists! Initialize credentials"
 		return 0
 	#	auth=$(export_auth "$CREDENTIAL_FILE")

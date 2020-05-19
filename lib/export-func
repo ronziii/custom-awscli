@@ -3,7 +3,7 @@
 CREDENTIAL_FILE="$1"
 
 
-export_variable() {
+export_auth() {
 	local access_key_id,access_secret_key,default_region
 
 	access_key_id=$(grep -w "AWS_ACCESS_KEY_ID" "$CREDENTIAL_FILE" | sed "s/.*=//g")
@@ -14,9 +14,10 @@ export_variable() {
 		export AWS_ACCESS_KEY_ID="$access_key_id"
 		export AWS_SECRET_ACCESS_KEY="$access_secret_key"
 		export AWS_DEFAULT_REGION="$default_region"
+		return 0
 	else 
 		echo "An error occured while fetching credentials!"
-		exit 1
+		return 1
 
 	fi
 	

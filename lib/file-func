@@ -7,12 +7,21 @@ validate_file() {
 	echo "Checking if file exists!"
 	echo "#####################"
 
+
 	if [[ -f "$CREDENTIAL_FILE" ]]; then
 		echo "File exists! Initialize credential variables"
-		export_variable "$CREDENTIAL_FILE"
+		auth=$(export_auth "$CREDENTIAL_FILE")
+		if [[ $auth == "true" ]]; then
+			echo "auth exported successfully!"
+			return 0
+		else
+			echo "An error occured while fetching auth!"
+			return 1
+		fi
+
 	else 
 		echo "File path provided does not exist!"
-		exit 1
+		return 1
 	fi
 
 	return

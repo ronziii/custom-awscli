@@ -7,25 +7,43 @@
 # $ iam-users
 iam-users() {
 
-#	if [[ "$@" -lt 2 ]]; then
-#		show_usage
-		exit 1
-#	fi
+	if [[ ! "$#" -eq "2" ]]; then
+		echo "Not enough arguments!"
+		show_usage
+		return 1
+		
+	fi
 
-#	if [[ $1 == "-c" ]]; then
-		validate_file "$2"
-#	else 
-#		show_usage
-#		exit 1
-#	fi
+	if [[ "$1" == "-c" ]]; then
+		local check_file
+		check_file=$(validate_file "$2")
+		echo $check_file
+		if [[ $check_file == "0" ]]; then
 
-	aws iam list-users    \
-    	--output text       \
-    	--query '
-      	Users[].[
+			aws iam list-users    \
+    		--output text       \
+    		--query '
+      		Users[].[
         	UserName,
         	UserId,
         	CreateDate
-    	]'
+    		]'
+    	else
+    		echo "##################"
+    		echo "An error occured while obtaining credentials."
+    		return 1
+
+    	fi
+
+	elif [[ $1 == "--help" ]]; then
+		show_usage
+		return
+	else 
+		echo "An error occured!"
+		show_usage
+		return
+	fi
+
+	return
  }
 

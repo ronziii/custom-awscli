@@ -4,5 +4,5 @@ show_usage() {
 
   echo_stderr "Usage: $0 --credentials=<path>
 	$0 [--help]\n \
-	$0 [list-iam-users|list-ec2-instances|list-s3-buckets|list-rds-instances|list-ecs-clusters|list-ecr-repositories]\n"
+	$0 [list-iam-users|list-ec2-instances|list-s3-buckets|list-rds-instances|list-ecs-clusters|list-ecr-repositories|cli-menu]\n"
 }

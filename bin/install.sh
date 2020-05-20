@@ -35,34 +35,20 @@ done
 #
 
 if [[ ! -f "${CREDENTIALS}" ]]; then
-  echo_stderr "File not found: '${CREDENTIALS}'"
+  echo_stderr "File not found: ${CREDENTIALS}"
   show_usage
   exit 3
 fi
 
 #
-# Export credentials from the file provided
-#
-access_key_id=$(grep -w "AWS_ACCESS_KEY_ID" "${CREDENTIALS}" | sed "s/.*=//g")
-access_secret_key=$(grep -w "AWS_SECRET_ACCESS_KEY" "${CREDENTIALS}" | sed "s/.*=//g")
-default_region=$(grep -w "AWS_REGION" "${CREDENTIALS}" | sed "s/.*=//g")
-
+# Export region as an environment variable
+export AWS_DEFAULT_REGION=$(awk -F '=' '/AWS_REGION/ {print $2}' $CREDENTIALS)
 
 #
-# If the credentials are empty then exit
+# Export access key and secret as environment variables
 #
-if  [[ -z  "${access_key_id}" && -z "${access_secret_key}" && -z "${default_region}" ]]; then
-	echo_stderr "Failed to get credentials!"
-	exit 3
-fi
-
-
-#
-# Export credentials as environment variables
-#
-export AWS_ACCESS_KEY_ID="${access_key_id}"
-export AWS_SECRET_ACCESS_KEY="${access_secret_key}"
-export AWS_DEFAULT_REGION="${default_region}"
-
-#
+for VAR in AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY ; do 
+  eval $(awk -F '=' -v var="$VAR" '$0 ~ var {print "export "var"="$2}' $CREDENTIALS)
+done
+ 
 echo "Application has been installed"

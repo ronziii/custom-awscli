@@ -3,12 +3,5 @@
 
 list-ecr-repos(){
 	
-	aws ecr describe-repositories \
-		--query "
-      	repositories[].[
-        repositoryName,
-        registryId,
-        repositoryUri
-        ]"                        \
-        --output text
+	aws ecr describe-repositories 
 }

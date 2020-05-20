@@ -23,6 +23,7 @@ $ git clone https://github.com/ronnie420/custom-awscli.git ~/.custom-awscli
 Assuming the repo is in your home folder, execute the main file and ensure to provide the credential file as a paramater as shown below
 
 The credential file should have format as:
+
 AWS_ACCESS_KEY_ID = AKIAXXXXXXX
 
 AWS_SECRET_ACCESS_KEY = XXXXXXXXXXX

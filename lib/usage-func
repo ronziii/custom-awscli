@@ -1,6 +1,7 @@
 #!/bin/bash
 
 show_usage() {
-	echo "#################"
-	echo "Show Usage:"
+	  
+	 echo_stderr "Usage: $0 [--credentials=<path>] [--profile=<name>] [--key|--secret|--session-token]"
+
 }

@@ -3,38 +3,16 @@
 # List IAM Users
 #
 
-auth_file="$2"
-
 # $ iam-users
 iam-users() {
 
-	local check_file
-	if [[ ! "$#" -eq "2" ]]; then
-		echo "Not enough arguments!"
-		show_usage
-		return 1
-		
-	fi
-
-	check_file=$(validate_file "$auth_file")
-	echo $check_file
-	if [[ $check_file == "0" ]]; then
-
-			aws iam list-users    \
-    		--output text       \
-    		--query '
-      		Users[].[
-        	UserName,
-        	UserId,
-        	CreateDate
-    		]'
-    else
-    		echo "##################"
-    		echo "An error occured while obtaining credentials."
-    		return 1
-
-    fi
-
-	return
+	aws iam list-users    \
+    	--output text       \
+    	--query '
+      	Users[].[
+        UserName,
+        UserId,
+        CreateDate
+    	]'
  }
 

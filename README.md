@@ -26,7 +26,10 @@ The credential file should have format as:
 AWS_ACCESS_KEY_ID = AKIAXXXXXXX\nAWS_SECRET_ACCESS_KEY = XXXXXXXXXXX\nAWS_REGION = xx_xxxxx
 
 ```shell
-$ ./custom-awscli/bin/main.sh --credentials=/path/to/credential-file
+$ cd ~/.custom-awscli/bin
+$ ./install.sh --credentials=/path/to/credential-file
+	Application has been installed
+
 ```
 
 ## Usage

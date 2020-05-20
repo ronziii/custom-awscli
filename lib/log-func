@@ -3,5 +3,7 @@
 # echo a message to standard error (used for messages not intended
 # to be parsed by scripts, such as usage messages, warnings or errors)
 echo_stderr() {
+
   echo "$@" >&2
+  
 }

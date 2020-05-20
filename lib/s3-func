@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+list-s3-buckets() {
+	
+	aws s3api list-buckets
+
+}
+
+	

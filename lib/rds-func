@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+#
+# This function will exec a command that lists the db insances via the cli
+#
+
+list-rds-instances() {
+
+	aws rds describe-db-instances --query 'DBInstances[*].[DBName,DBInstanceIdentifier]' --output text
+	
+}

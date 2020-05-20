@@ -4,7 +4,7 @@
 #
 
 # $ iam-users
-iam-users() {
+list-iam-users() {
 
 	aws iam list-users    \
     	--output text       \

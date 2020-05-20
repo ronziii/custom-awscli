@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#
+# List ec2 instances
+#
+
+# $ list-ec2-instances
+list-ec2-instances(){
+
+	aws ec2 describe-instances \
+	--output text
+}
+
+
+

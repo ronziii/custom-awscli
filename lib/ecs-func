@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#
+# List ecs clusters
+# 
+
+list-ecs-clusters() {
+
+	aws ecs list-clusters
+
+}

@@ -66,3 +66,10 @@ $ list-s3-buckets
 ```shell
 $ list-rds-instances
 ```
+*** Show Help Menu ***
+```shell
+$ cli-menu
+	Usage: show_usage --credentials=<path>
+        show_usage [--help]
+        show_usage [list-iam-users|list-ec2-instances|list-s3-buckets|list-rds-instances|list-ecs-clusters|list-ecr-repositories]
+```

@@ -2,10 +2,10 @@
 
 
 ## Source the lib functions
-if [ -d "${HOME}"/.custom-awscli ]; then
-  for f in ~/.custom-awscli/lib/*-func; do 
-  	source "$f"; done
-fi
+for f in ../lib/*-func; do
+  source "$f"
+done
+
 
 ## Loop through the arguments passed
 for i in "$@"

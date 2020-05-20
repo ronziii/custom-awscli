@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cli-menu() {
+	
+	show_usage
+}

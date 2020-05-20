@@ -24,7 +24,7 @@ Assuming the repo is in your home folder, execute the main file and ensure to pr
 
 ```shell
 $ cd ~/.custom-awscli/bin
-$ ./install.sh --credentials=/path/to/credential-file
+$ source install.sh --credentials=/path/to/credential-file
 ```
 
 The credential file should have format as:

@@ -43,9 +43,9 @@ fi
 #
 # Export credentials from the file provided
 #
-access_key_id=$(awk -F '=' '/AWS_ACCESS_KEY_ID/ {print $2}' ${CREDENTIALS})
-access_secret_key=$(awk -F '=' '/AWS_SECRET_ACCESS_KEY/ {print $2}' ${CREDENTIALS})
-default_region=$(awk -F '=' '/AWS_REGION/ {print $2}' ${CREDENTIALS})
+access_key_id=$(grep -w "AWS_ACCESS_KEY_ID" "${CREDENTIALS}" | sed "s/.*=//g")
+access_secret_key=$(grep -w "AWS_SECRET_ACCESS_KEY" "${CREDENTIALS}" | sed "s/.*=//g")
+default_region=$(grep -w "AWS_REGION" "${CREDENTIALS}" | sed "s/.*=//g")
 
 
 #
@@ -60,9 +60,9 @@ fi
 #
 # Export credentials as environment variables
 #
-set AWS_ACCESS_KEY_ID="${access_key_id}"
-set AWS_SECRET_ACCESS_KEY="${access_secret_key}"
-set AWS_DEFAULT_REGION="${default_region}"
+export AWS_ACCESS_KEY_ID="${access_key_id}"
+export AWS_SECRET_ACCESS_KEY="${access_secret_key}"
+export AWS_DEFAULT_REGION="${default_region}"
 
 #
 echo "Application has been installed"

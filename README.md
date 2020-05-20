@@ -35,6 +35,8 @@ $ source ~/.custom-awscli/bin/main.sh --credentials=/path/to/credential-file
 
 ### Resource Listing Commands
 
+Execute the below commands on your bash terminal after successful installation.
+
 *** List IAM Users ***
 ```shell
 $ list-iam-users

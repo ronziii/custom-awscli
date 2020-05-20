@@ -14,13 +14,13 @@ Custom-AWSCLI is a simple set of CLI commands that you can use to list resources
 
 ### Installation
 
-As shown below, you may simply clone the GitHub repo to your home folder and source the files required.
+As shown below, you may simply clone the GitHub repo to your home folder.
 
 ```shell
 $ git clone https://github.com/ronnie420/custom-awscli.git ~/.custom-awscli
 ```
 
-Assuming the repo is in your home folder, execute the main file and ensure to provide the credential file as a paramater as shown below
+Assuming the repo is in your home folder, ensure you source the main file and provide the credential file as a paramater as shown below
 
 ```shell
 $ cd ~/.custom-awscli/bin

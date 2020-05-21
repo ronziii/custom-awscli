@@ -29,11 +29,11 @@ $ source install.sh --credentials=/path/to/credential-file
 
 The credential file should have format as:
 
-AWS_ACCESS_KEY_ID = AKIAXXXXXXX
+AWS_ACCESS_KEY_ID=AKIAXXXXXXX
 
-AWS_SECRET_ACCESS_KEY = XXXXXXXXXXX
+AWS_SECRET_ACCESS_KEY=XXXXXXXXXXX
 
-AWS_REGION = xx_xxxxx
+AWS_REGION=xx_xxxxx
 
 
 

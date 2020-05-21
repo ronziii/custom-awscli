@@ -24,16 +24,16 @@ Assuming the repo is in your home folder, ensure you source the main file and pr
 
 ```shell
 $ cd ~/.custom-awscli/bin
-$ source install.sh --credentials=/path/to/credential-file
+$ source main.sh --credentials=/path/to/credential-file
 ```
 
 The credential file should have format as:
 
-AWS_ACCESS_KEY_ID = AKIAXXXXXXX
+AWS_ACCESS_KEY_ID=AKIAXXXXXXX
 
-AWS_SECRET_ACCESS_KEY = XXXXXXXXXXX
+AWS_SECRET_ACCESS_KEY=XXXXXXXXXXX
 
-AWS_REGION = xx_xxxxx
+AWS_REGION=xx_xxxxx
 
 
 
@@ -55,7 +55,7 @@ $ list-ec2-instances
 
 *** List ECR Repositories ***
 ```shell
-$ list-ecr-repositories
+$ list-ecr-repos
 ```
 
 *** List ECS Clusters ***

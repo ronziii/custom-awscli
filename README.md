@@ -55,7 +55,7 @@ $ list-ec2-instances
 
 *** List ECR Repositories ***
 ```shell
-$ list-ecr-repositories
+$ list-ecr-repos
 ```
 
 *** List ECS Clusters ***
